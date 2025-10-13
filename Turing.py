@@ -1,6 +1,8 @@
 import json
 import sys
+import time
 
+inicio = time.time()
 argvs = sys.argv
 arquivo1 = argvs[1]
 arquivo2 = argvs[2]
@@ -49,6 +51,13 @@ with open(arquivo2, 'r+') as txt:
 
 with open(arquivo_saida, 'w') as saida:
     saida.write(''.join(entrada))
+
+for i in range(1000000):
+    pass
+
+fim = time.time()
+duracao = fim - inicio
+print(f"Tempo de execução: {duracao:.2f} segundos")
 
 if estadoInicial in estadoFinal:
     print("1")
